@@ -9,9 +9,11 @@ app.use(express.json());
 dotenv.config();
 connectWithDB();
 
-app.use("/todo-app",authMiddleware, todoRouter);
+app.use("/todo-app", authMiddleware, todoRouter);
 app.use("/auth", authRouter);
-
+app.get("/", (req, res) => {
+  res.send("Hello World");
+});
 app.listen(5000, () => {
   console.log("APP STARTED");
 });
