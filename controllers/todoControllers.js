@@ -29,7 +29,7 @@ export const addTodo = async (req, res) => {
 
 export const getTodos = async (req, res) => {
   try {
-    const todos = await Todo.find();
+    const todos = await Todo.find({ user: req.userId });
     res.status(200).json({ data: todos });
   } catch (error) {
     res.status(500).json({ error: error.message });
