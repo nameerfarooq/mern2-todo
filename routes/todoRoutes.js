@@ -6,6 +6,7 @@ import {
   getTodoByID,
   getTodos,
   updatetodo,
+  generateAITodos,
 } from "../controllers/todoControllers.js";
 import authMiddleware from "../middlewares/authMiddleware.js";
 
@@ -17,5 +18,6 @@ router.get("/todo/:id", getTodoByID);
 router.delete("/todo/:id", deleteTodoByID);
 router.delete("/todo", deleteAllTodos);
 router.patch("/todo/:id", updatetodo);
+router.get("/todo-ai/generate", generateAITodos);
 
 export default router;
